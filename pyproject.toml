@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "fincept-terminal"
+version = "0.1.0"
+description = "An advanced financial terminal for market data, analysis, and portfolio management"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Fincept Corporation", email = "support@fincept.in" }
+]
+keywords = ["finance", "terminal", "market-data", "stocks", "portfolio", "trading"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Environment :: Console",
+]
+dependencies = [
+    "textual>=0.47.0",
+    "rich>=13.7.0",
+    "httpx>=0.26.0",
+    "pandas>=2.1.0",
+    "numpy>=1.26.0",
+    "plotext>=5.2.8",
+    "yfinance>=0.2.36",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.7",
+    "pydantic>=2.5.0",
+    "aiohttp>=3.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.12.0",
+    "ruff>=0.1.9",
+    "mypy>=1.8.0",
+    "pre-commit>=3.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Fincept-Corporation/FinceptTerminal"
+Repository = "https://github.com/Fincept-Corporation/FinceptTerminal"
+Issues = "https://github.com/Fincept-Corporation/FinceptTerminal/issues"
+Documentation = "https://docs.fincept.in"
+
+[project.scripts]
+fincept = "fincept_terminal.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+cov_report = "term-missing"
+
+[tool.coverage.run]
+source = ["src/fincept_terminal"]
+omit = ["tests/*", "**/__main__.py"]
