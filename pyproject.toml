@@ -81,7 +81,8 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
-cov_report = "term-missing"
+# using term-missing to see which lines are not covered during local dev
+addopts = "--cov=src/fincept_terminal --cov-report=term-missing"
 
 [tool.coverage.run]
 source = ["src/fincept_terminal"]
