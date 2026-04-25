@@ -1,15 +1,1 @@
-"""
-FinceptTerminal - A comprehensive financial terminal application.
-
-This package provides tools for financial data analysis, market monitoring,
-portfolio management, and economic research through an interactive terminal UI.
-"""
-
-__version__ = "0.1.0"
-__author__ = "Fincept Corporation"
-__license__ = "MIT"
-__description__ = "A comprehensive financial terminal for market analysis and research"
-
-from fincept_terminal.app import FinceptTerminalApp
-
-__all__ = ["FinceptTerminalApp", "__version__"]
+"""\nFinceptTerminal - A comprehensive financial terminal application.\n\nThis package provides tools for financial data analysis, market monitoring,\nportfolio management, and economic research through an interactive terminal UI.\n\nNote: This is a personal fork for learning purposes. Main repo:\nhttps://github.com/Fincept-Corporation/FinceptTerminal\n"""\n\n__version__ = "0.1.0"\n__author__ = "Fincept Corporation"\n__license__ = "MIT"\n__description__ = "A comprehensive financial terminal for market analysis and research"\n\n# Personal fork - tracking upstream version for reference\n__upstream_version__ = "0.1.0"\n\nfrom fincept_terminal.app import FinceptTerminalApp\n\n__all__ = ["FinceptTerminalApp", "__version__"]\n
